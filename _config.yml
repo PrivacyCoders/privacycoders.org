@@ -1,0 +1,16 @@
+title: PrivacyCoders
+description: Operational security software and resources for journalists, whistleblowers, activists, and civil society.
+url: https://privacycoders.org
+permalink: /blog/:year/:month/:day/:title/
+
+markdown: kramdown
+theme: null
+
+plugins:
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

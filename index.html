@@ -1,0 +1,70 @@
+---
+layout: default
+title: Home
+description: OPSEC-focused software, guides, and resources for journalists, activists, and whistleblowers.
+---
+
+<main>
+  <section class="hero">
+    <p class="eyebrow">Operational Security Collective</p>
+    <h1>Build software that protects people under pressure.</h1>
+    <p class="hero-copy">
+      We publish operational security software, practical threat-modeling guidance,
+      and vetted privacy and cybersecurity resources for journalists,
+      whistleblowers, activists, and civil society groups.
+    </p>
+    <a class="button" href="{{ '/blog/' | relative_url }}">Open Blog</a>
+  </section>
+
+  <section id="mission" class="card-section">
+    <h2>Mission</h2>
+    <p>
+      Our mission is to design and maintain defensive tools that are usable in
+      high-risk environments, then share field-ready playbooks that improve
+      operational resilience and digital safety.
+    </p>
+    <p>
+      We prioritize secure defaults, low cognitive load, and transparent
+      documentation so non-specialists can adopt strong practices quickly.
+    </p>
+  </section>
+
+  <section id="resources" class="card-section">
+    <h2>Resource Tracks</h2>
+    <div class="resource-grid">
+      <article class="resource-card">
+        <h3>OPSEC Guides</h3>
+        <p>Tradecraft, risk assessment templates, and incident checklists.</p>
+      </article>
+      <article class="resource-card">
+        <h3>Cybersecurity Basics</h3>
+        <p>Hardening primers for endpoints, browsers, and communications.</p>
+      </article>
+      <article class="resource-card">
+        <h3>Privacy Toolkit</h3>
+        <p>Identity protection, metadata reduction, and secure collaboration workflows.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="latest" class="card-section">
+    <h2>Latest From The Blog</h2>
+    <ul class="post-list">
+      {% for post in site.posts limit:4 %}
+      <li class="post-item">
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <p class="post-meta">{{ post.date | date: "%Y-%m-%d" }} • {{ post.categories | join: ", " }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+    <a class="button" href="{{ '/blog/' | relative_url }}">View All Posts</a>
+  </section>
+
+  <section id="contact" class="card-section">
+    <h2>Contact</h2>
+    <p>
+      For collaboration, training requests, or coordinated vulnerability and
+      safety disclosures, reach out at <strong>contact@privacycoders.org</strong>.
+    </p>
+  </section>
+</main>

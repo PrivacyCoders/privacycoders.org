@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta
+      name="description"
+      content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"
+    />
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+  </head>
+  <body>
+    <div class="bg-shape bg-shape-1" aria-hidden="true"></div>
+    <div class="bg-shape bg-shape-2" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="PrivacyCoders home">
+        <span class="brand-left">Privacy</span><span class="brand-right">Coders</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li>
+            <a
+              href="{{ '/#mission' | relative_url }}"
+              data-menu-index="1"
+              data-shortcut="Ctrl+1"
+            >
+              Mission
+            </a>
+          </li>
+          <li>
+            <a
+              href="{{ '/blog/' | relative_url }}"
+              data-menu-index="2"
+              data-shortcut="Ctrl+2"
+            >
+              Blog
+            </a>
+          </li>
+          <li>
+            <a
+              href="{{ '/#resources' | relative_url }}"
+              data-menu-index="3"
+              data-shortcut="Ctrl+3"
+            >
+              Resources
+            </a>
+          </li>
+          <li>
+            <a
+              href="{{ '/#contact' | relative_url }}"
+              data-menu-index="4"
+              data-shortcut="Ctrl+4"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    {{ content }}
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> {{ site.title }}</p>
+    </footer>
+
+    {% if page.tree_view %}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="{{ '/assets/js/blog-tree.js' | relative_url }}"></script>
+    {% endif %}
+
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  </body>
+</html>
